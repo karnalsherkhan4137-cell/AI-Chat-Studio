@@ -1,0 +1,337 @@
+/* ===========================================================
+   AI Chat Studio
+   Login Page
+=========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:#0f172a;
+
+    color:#fff;
+
+}
+
+/* ==========================
+   Animated Background
+========================== */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-1;
+
+}
+
+.background span{
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    opacity:.25;
+
+    animation:float 12s infinite alternate;
+
+}
+
+.background span:nth-child(1){
+
+    top:-100px;
+
+    left:-100px;
+
+    background:#7f5af0;
+
+}
+
+.background span:nth-child(2){
+
+    top:40%;
+
+    right:-120px;
+
+    background:#00d4ff;
+
+}
+
+.background span:nth-child(3){
+
+    bottom:-120px;
+
+    left:20%;
+
+    background:#4ade80;
+
+}
+
+.background span:nth-child(4){
+
+    bottom:-100px;
+
+    right:20%;
+
+    background:#ff4ecd;
+
+}
+
+@keyframes float{
+
+    from{
+
+        transform:translateY(0) scale(1);
+
+    }
+
+    to{
+
+        transform:translateY(-60px) scale(1.15);
+
+    }
+
+}
+
+/* ==========================
+   Login Card
+========================== */
+
+.login-container{
+
+    width:420px;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+}
+
+/* ==========================
+   Logo
+========================== */
+
+.logo{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+.logo i{
+
+    font-size:65px;
+
+    color:#7f5af0;
+
+    margin-bottom:15px;
+
+}
+
+.logo h1{
+
+    font-size:32px;
+
+    margin-bottom:8px;
+
+}
+
+.logo p{
+
+    color:#cbd5e1;
+
+    font-size:15px;
+
+}
+
+/* ==========================
+   Inputs
+========================== */
+
+.input-group{
+
+    margin-bottom:22px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:500;
+
+}
+
+.input-group input{
+
+    width:100%;
+
+    padding:14px 18px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#1e293b;
+
+    color:white;
+
+    outline:none;
+
+    transition:.3s;
+
+    font-size:15px;
+
+}
+
+.input-group input:focus{
+
+    border:1px solid #7f5af0;
+
+    box-shadow:0 0 12px #7f5a80;
+
+}
+
+/* ==========================
+   Button
+========================== */
+
+.login-btn{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    background:#7f5af0;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+.login-btn:hover{
+
+    background:#6845dd;
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================
+   Message
+========================== */
+
+#message{
+
+    margin-top:18px;
+
+    text-align:center;
+
+    min-height:25px;
+
+    font-size:15px;
+
+}
+
+/* ==========================
+   Footer
+========================== */
+
+.footer{
+
+    margin-top:25px;
+
+    text-align:center;
+
+}
+
+.footer p{
+
+    color:#cbd5e1;
+
+}
+
+.footer a{
+
+    color:#7f5af0;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.footer a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:500px){
+
+    .login-container{
+
+        width:95%;
+
+        padding:25px;
+
+    }
+
+    .logo h1{
+
+        font-size:26px;
+
+    }
+
+}

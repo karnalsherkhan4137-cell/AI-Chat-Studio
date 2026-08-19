@@ -1,0 +1,12 @@
+backend/.env
+backend/*.db
+backend/__pycache__/
+backend/app/**/__pycache__/
+backend/.pytest_cache/
+backend/venv/
+*.pyc
+__pycache__/
+.vscode/
+uploads/*
+!uploads/.gitkeep
+node_modules/

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>AI Chat Studio</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Animated Background -->
+
+<div class="background">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="container">
+
+<!-- ========================= -->
+<!-- Sidebar -->
+<!-- ========================= -->
+
+<aside class="sidebar">
+
+    <!-- Logo -->
+
+    <div class="logo">
+        <i class="fa-solid fa-robot"></i>
+        <h2>AI Chat Studio</h2>
+    </div>
+
+    <!-- New Chat -->
+
+    <button class="new-chat" id="newChat">
+        <i class="fa-solid fa-plus"></i>
+        New Chat
+    </button>
+
+    <!-- Search -->
+
+    <div class="search">
+
+        <i class="fa-solid fa-search"></i>
+
+        <input
+            type="text"
+            id="searchChat"
+            placeholder="Search Chats">
+
+    </div>
+
+    <!-- Chat History -->
+
+    <div
+        class="chat-history"
+        id="chatHistory">
+
+        <!-- JavaScript will load chats here -->
+
+    </div>
+
+    <!-- Sidebar Bottom -->
+
+    <div class="sidebar-bottom">
+
+        <button id="theme">
+
+            <i class="fa-solid fa-moon"></i>
+
+            Theme
+
+        </button>
+
+        <button id="profileBtn">
+
+            <i class="fa-solid fa-user"></i>
+
+            Profile
+
+        </button>
+
+        <button id="settingsBtn">
+
+            <i class="fa-solid fa-gear"></i>
+
+            Settings
+
+        </button>
+
+        <button id="logout">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </div>
+
+</aside>
+<!-- ========================= -->
+<!-- Main Chat Area -->
+<!-- ========================= -->
+
+<main class="chat-area">
+
+    <!-- Header -->
+
+    <header>
+
+        <div class="title">
+
+            <i class="fa-solid fa-brain"></i>
+
+            <h2 id="chatTitle">AI Assistant</h2>
+
+        </div>
+
+        <div class="header-icons">
+
+            <button id="refreshChat">
+
+                <i class="fa-solid fa-rotate-right"></i>
+
+            </button>
+
+            <button id="fullscreen">
+
+                <i class="fa-solid fa-expand"></i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- Messages -->
+
+    <section
+        class="messages"
+        id="messages">
+
+        <!-- Welcome Message -->
+
+        <div class="message ai">
+
+            <img
+                src="https://ui-avatars.com/api/?name=AI&background=7f5af0&color=fff">
+
+            <div class="bubble">
+
+                <h4>AI Assistant</h4>
+
+                <p>
+
+                    👋 Welcome to AI Chat Studio.
+
+                    <br><br>
+
+                    Start a new conversation by clicking
+                    <strong>New Chat</strong>
+                    and ask me anything.
+
+                </p>
+
+                <span>Now</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Typing Indicator -->
+
+    <div
+        class="typing"
+        id="typing"
+        style="display:none;">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+
+
+    <!-- Chat Input -->
+
+    <div class="chat-input">
+
+        <!-- Attachment -->
+
+        <button id="attachFile">
+
+            <i class="fa-solid fa-paperclip"></i>
+
+        </button>
+
+        <!-- Emoji -->
+
+        <button id="emojiBtn">
+
+            <i class="fa-solid fa-face-smile"></i>
+
+        </button>
+
+        <!-- Message -->
+
+        <textarea
+
+            id="message"
+
+            placeholder="Ask anything..."
+
+            rows="1"
+
+        ></textarea>
+
+        <!-- Voice -->
+
+        <button id="voiceBtn">
+
+            <i class="fa-solid fa-microphone"></i>
+
+        </button>
+
+        <!-- Send -->
+
+        <button id="send">
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+        </button>
+
+    </div>
+
+</main>
+<!-- ========================= -->
+<!-- Dashboard -->
+<!-- ========================= -->
+
+<aside class="dashboard">
+
+    <!-- User Profile -->
+
+    <div class="profile-card">
+
+        <img
+            id="profileImage"
+            src="https://ui-avatars.com/api/?name=User&background=7f5af0&color=fff"
+            alt="Profile">
+
+        <h3 id="profileName">
+
+            Guest User
+
+        </h3>
+
+        <p id="profileEmail">
+
+            Login to continue
+
+        </p>
+
+    </div>
+
+
+
+    <!-- Statistics -->
+
+    <div class="stats">
+
+        <div>
+
+            <h2 id="totalChats">
+
+                0
+
+            </h2>
+
+            <p>Total Chats</p>
+
+        </div>
+
+        <div>
+
+            <h2 id="totalMessages">
+
+                0
+
+            </h2>
+
+            <p>Messages</p>
+
+        </div>
+
+        <div>
+
+            <h2 id="aiStatus">
+
+                Online
+
+            </h2>
+
+            <p>AI Status</p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Quick Actions -->
+
+    <div class="quick-actions">
+
+        <button id="exportChat">
+
+            <i class="fa-solid fa-download"></i>
+
+            Export Chat
+
+        </button>
+
+        <button id="clearChat">
+
+            <i class="fa-solid fa-trash"></i>
+
+            Clear Chat
+
+        </button>
+
+        <button id="duplicateChat">
+
+            <i class="fa-solid fa-copy"></i>
+
+            Duplicate Chat
+
+        </button>
+
+    </div>
+
+
+
+    <!-- AI Information -->
+
+    <div class="ai-info">
+
+        <h3>
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            AI Model
+
+        </h3>
+
+        <p>
+
+            <strong>Google Gemini</strong>
+
+        </p>
+
+        <p>
+
+            Connected through your FastAPI backend.
+
+        </p>
+
+    </div>
+
+</aside>
+
+</div>
+
+<!-- JavaScript -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
