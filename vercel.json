@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api" },
+    { "source": "/", "destination": "/front-end/login.html" },
+    { "source": "/login.html", "destination": "/front-end/login.html" },
+    { "source": "/register.html", "destination": "/front-end/register.html" },
+    { "source": "/app.html", "destination": "/front-end/index.html" }
+  ]
+}
